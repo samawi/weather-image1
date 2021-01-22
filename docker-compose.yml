@@ -1,0 +1,8 @@
+version: "3"
+services: 
+  app:
+    build: .
+    volumes: 
+      - .:/home
+    command: python3 test1.py
+    working_dir: /home
