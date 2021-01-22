@@ -28,15 +28,16 @@ def download():
         with open(filename, 'wb') as f:
             shutil.copyfileobj(r.raw, f)
 
-        print('Image successfully downloaded: ', filename)
+        # print('Image successfully downloaded: ', filename)
 
     else:
-        print('Image couldn\'t be retreived')
+        pass
+        # print('Image couldn\'t be retreived')
 
     # STEP 2: Read image and OCR
 
     text_from_image = pytesseract.image_to_string(Image.open(filename))
-    print("Text = " + text_from_image)
+    # print("Text = " + text_from_image)
 
     import re
 
@@ -44,7 +45,7 @@ def download():
     try:
         mytimestamp = pattern.findall(text_from_image)[0]
     except:
-        print("ERROR regex")
+        # print("ERROR regex")
         mytimestamp = time.strftime("%Y-%m-%d-%H-%M")
     finally:
         mytimestamp = mytimestamp.replace(':','-')
@@ -53,7 +54,7 @@ def download():
     # mytimestamp = pattern.findall(text_from_image)[0]
     # mytimestamp = mytimestamp.replace(':','-')
     # mytimestamp = mytimestamp.replace(' ','-')
-    print(mytimestamp)
+    # print(mytimestamp)
 
     # STEP 3: Rename and move the file
 
@@ -85,7 +86,7 @@ def download():
     frames.append(new_frame)
 
     # Save into a GIF file that loops forever
-    frames[0].save('weather_animation.gif', format='GIF', append_images=frames[1:], save_all=True, duration=300, loop=0)
+    frames[0].save('public-html/images/weather_animation.gif', format='GIF', append_images=frames[1:], save_all=True, duration=300, loop=0)
 
 
 while True: 
