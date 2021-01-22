@@ -5,3 +5,4 @@ try1.ipynb
 png_to_gif.gif
 delete-older-files.ipynb
 *.png
+public-html/bootstrap-samples*
