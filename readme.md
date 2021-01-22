@@ -1,4 +1,4 @@
-# Download Weather image and create GIF Animation file user Tesseract
+# Download Weather image and create GIF Animation file using Tesseract
 
 
 ## Description:
