@@ -4,11 +4,13 @@ services:
     build: .
     volumes: 
       - .:/home
-    command: python3 test1.py
+    command: ["stdbuf", "-oL", "python3", "test1.py"]
     working_dir: /home
+    restart: always
   web:
     image: httpd
     volumes: 
       - ./public-html/:/usr/local/apache2/htdocs/
     ports:
       - 8080:80
+    restart: always

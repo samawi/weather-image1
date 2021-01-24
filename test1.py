@@ -67,6 +67,7 @@ def download():
     for root_files, folders, files in os.walk(path):
         for filename in files:
             time_long = get_file_age(path + "/" + filename)
+            #print("seconds = {0:5.2f} : time_long = {1:5.2f}".format(seconds, time_long))
             if seconds <= time_long:
                 pass
             else:
