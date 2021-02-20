@@ -1,7 +1,6 @@
 old-images/*
-weather_animation.gif
 try1.ipynb
-png_to_gif.gif
+*.gif
 delete-older-files.ipynb
 *.png
 public-html/bootstrap-samples*
