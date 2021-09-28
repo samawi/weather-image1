@@ -10,7 +10,7 @@ services:
   web:
     image: httpd
     volumes: 
-      - ./public-html/:/usr/local/apache2/htdocs/
+      - ./public-html:/usr/local/apache2/htdocs
     ports:
       - 80:80
     restart: "no"
